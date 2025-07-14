@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>שיעורי בית</title>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault();
+
+        var formData = new FormData(event.target);
+        const data = Object.fromEntries(formData);
+
+        let html = `<table><thead><tr><th style="text-align:right">מפתח</th><th>ערך</th></thead><tbody>`;
+        
+        for(i in data) {
+            html += `<tr><th style="text-align:right">${i}</th><td>${data[i]}</td></tr>`;
+        };
+
+        html += '</tbody></table>';
+
+        document.querySelector('#result').innerHTML = html;
+
+      }
+    </script>
+  </head>
+
+  <body>
+    <h1>פרטי התלמיד</h1>
+    <form onsubmit="handleSubmit(event)">
+      <fieldset>
+        <legend>פרטים אישיים</legend>
+
+        <label for="fname">שם פרטי:</label>
+        <input type="text" id="fname" name="fname" /><br />
+
+        <label for="lname">שם משפחה:</label>
+        <input type="text" id="lname" name="lname" /><br />
+
+        <label for="id_namber">ת.ז.</label>
+        <input type="text" id="id_namber" name="id_namber" /><br />
+
+        <label for="First_last_name">שם משפחה קודם:</label>
+        <input type="text" id="First_last_name" name="prev_last_name" /><br />
+
+        <span>מין</span>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">זכר</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">נקבה</label><br />
+
+        <label for="family_status">מצב משפחתי</label>
+        <select name="family_status" id="family_status">
+          <option value="">בחר...</option>
+          <option value="single">רווק</option>
+          <option value="married">נשוי</option>
+          <option value="widower">אלמן</option>
+          <option value="divorcee">גרוש</option>
+        </select><br>
+        <label for="namber_of_chldren">מס' ילדים</label>
+        <input type="naber" id="namber_of_chldren" name="namber_of_chldren"><br>
+
+        <label for="citizenship">אזרחות:</label>
+        <select name="citizenship" id="citizenship">
+            <option value="">בחר...</option>
+            <option value="israel">ישראל</option>
+            <option value="u.s">ארה"ב</option>
+            <option value="england">אנגליה</option>
+            <option value="spain">ספרד</option>
+            <option value="portugal">פורטוגל</option>
+            <option value="cyprus">קפריסין</option>
+        </select><br>
+
+        <label for="date_of_birth">ת. לידה:</label>
+        <input type="text" id="date_of_birth" name="date_of_birth"><br>
+
+        <label for="address">כתובת:</label>
+        <input type="text" id="address" name="address"><br>
+
+        <label for="telephone_number">מס' טלפון:</label>
+        <input type="text" id="telephone_number" name="telephone_number"><br>
+        
+      </fieldset>
+
+      <fieldset>
+        <legend>פרטי הקורס המבוקש</legend>
+
+        <label for="course_name">שם הקורס</label>
+        <select name="course_name" id="course_name">
+
+        <option value="">בחר...</option>
+        <option value="english">אנגלית</option>
+        <option value="construction_supervision">פיקוח בנייה</option>
+        <option value="electrician">חשמלאי</option>
+        <option value="lnterior_designer">מעצב פנים</option>
+        <option value="progremmer">מתכנת</option>
+        </select><br>
+
+        <label for="study_location">מקום הלימוד:</label>
+        <select name="study_location" id="study_location">
+            <option value="">בחר...</option>
+            <option value="ashdod">אשדוד</option>
+            <option value="beit_shemesh">בית שמש</option>
+            <option value="jerusalem">ירושלים</option>
+        </select><br>
+
+        <span>שעות לימוד</span>
+        <input type="radio" id="6_to_10_pm" name="study_hours" value="6_to_10_pm">
+        <label for="6_to_10_pm">18:00 - 22:00</label>
+        <input type="radio" id="4_to_8_pm" name="study_hours" value="4_to_8_pm">
+        <label for="4_to_8_pm">16:00 - 20:00</label>
+
+
+        </select>
+        
+
+
+      </fieldset>
+
+      <button ttype="submit">שליחה</button>
+    </form>
+
+    <div id="result"></div>
+  </body>
+</html>
