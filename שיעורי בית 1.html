@@ -26,43 +26,46 @@
     </script>
   </head>
 
-  <body>
-    <h1>פרטי התלמיד</h1>
+  <body style="background-color: #00eaff; margin: 0;">
+    <div style="max-width: 800px; margin: auto; padding: 0px 16px;">
+    <h1 style="text-align: center;">שמחה חמניצקי לימודי תכנות מהירים</h1>
+    <h2 style="text-align: center;">טופס הרשמה ובחירת קורס</h2>
+    <h3 style="margin-right: 16px;font-size:25px ;">מלאו את הפרטים ונחזור אליכם בהקדם!</h3>
     <form onsubmit="handleSubmit(event)">
-      <fieldset>
-        <legend>פרטים אישיים</legend>
+      <fieldset style="background-color: rgba(255, 255, 255, 0.75);">
+        <legend style="font-size: 20px;">פרטים אישיים</legend>
 
-        <label for="fname">שם פרטי:</label>
+        <label for="fname" style="width: 100px;display: inline-block;">שם פרטי:</label>
         <input type="text" id="fname" name="fname" /><br />
 
-        <label for="lname">שם משפחה:</label>
+        <label for="lname" style="width: 100px;display: inline-block;">שם משפחה:</label>
         <input type="text" id="lname" name="lname" /><br />
 
-        <label for="id_namber">ת.ז.</label>
+        <label for="id_namber" style="width: 100px;display: inline-block;">ת.ז.</label>
         <input type="text" id="id_namber" name="id_namber" /><br />
 
-        <label for="First_last_name">שם משפחה קודם:</label>
+        <label for="First_last_name" style="width: 100px;display: inline-block;">שם משפחה קודם:</label>
         <input type="text" id="First_last_name" name="prev_last_name" /><br />
 
-        <span>מין</span>
-        <input type="radio" id="male" name="gender" value="male" />
+        <span style="width: 100px;display: inline-block;">מין</span>
+        <input type="radio" id="male" name="gender" value="male"  />
         <label for="male">זכר</label>
         <input type="radio" id="female" name="gender" value="female" />
         <label for="female">נקבה</label><br />
 
-        <label for="family_status">מצב משפחתי</label>
-        <select name="family_status" id="family_status">
+        <label for="family_status" style="width: 100px;display: inline-block;">מצב משפחתי</label>
+        <select name="family_status" id="family_status" style="width: 177px;">
           <option value="">בחר...</option>
           <option value="single">רווק</option>
           <option value="married">נשוי</option>
           <option value="widower">אלמן</option>
           <option value="divorcee">גרוש</option>
         </select><br>
-        <label for="namber_of_chldren">מס' ילדים</label>
+        <label for="namber_of_chldren" style="width: 100px;display: inline-block;">מס' ילדים</label>
         <input type="naber" id="namber_of_chldren" name="namber_of_chldren"><br>
 
-        <label for="citizenship">אזרחות:</label>
-        <select name="citizenship" id="citizenship">
+        <label for="citizenship" style="width: 100px;display: inline-block;">אזרחות:</label>
+        <select name="citizenship" id="citizenship" style="width: 177px;">
             <option value="">בחר...</option>
             <option value="israel">ישראל</option>
             <option value="u.s">ארה"ב</option>
@@ -72,43 +75,42 @@
             <option value="cyprus">קפריסין</option>
         </select><br>
 
-        <label for="date_of_birth">ת. לידה:</label>
-        <input type="text" id="date_of_birth" name="date_of_birth"><br>
+        <label for="date_of_birth" style="width: 100px;display: inline-block;">ת. לידה:</label>
+        <input type="date" id="date_of_birth" name="date_of_birth" style="width: 172px;"><br>
 
-        <label for="address">כתובת:</label>
+        <label for="address" style="width: 100px;display: inline-block;">כתובת:</label>
         <input type="text" id="address" name="address"><br>
 
-        <label for="telephone_number">מס' טלפון:</label>
+        <label for="telephone_number" style="width: 100px;display: inline-block;">מס' טלפון:</label>
         <input type="text" id="telephone_number" name="telephone_number"><br>
         
       </fieldset>
 
-      <fieldset>
-        <legend>פרטי הקורס המבוקש</legend>
+      <fieldset style="background-color: rgba(255, 255, 255, 0.75); margin-top: 16px;">
+        <legend style="font-size: 20px;">פרטי הקורס המבוקש</legend>
 
-        <label for="course_name">שם הקורס</label>
-        <select name="course_name" id="course_name">
-
+        <label for="course_name" style="width: 100px;display: inline-block;">שם הקורס</label>
+        <select name="course_name" id="course_name" style="width: 177px;">
         <option value="">בחר...</option>
         <option value="english">אנגלית</option>
         <option value="construction_supervision">פיקוח בנייה</option>
         <option value="electrician">חשמלאי</option>
         <option value="lnterior_designer">מעצב פנים</option>
-        <option value="progremmer">מתכנת</option>
+        <option value="progremmer">תכנות</option>
         </select><br>
 
-        <label for="study_location">מקום הלימוד:</label>
-        <select name="study_location" id="study_location">
+        <label for="study_location" style="width: 100px;display: inline-block;">מקום הלימוד:</label>
+        <select name="study_location" id="study_location" style="width: 177px;">
             <option value="">בחר...</option>
             <option value="ashdod">אשדוד</option>
             <option value="beit_shemesh">בית שמש</option>
             <option value="jerusalem">ירושלים</option>
         </select><br>
 
-        <span>שעות לימוד</span>
+        <span style="width: 100px;display: inline-block;">שעות לימוד</span>
         <input type="radio" id="6_to_10_pm" name="study_hours" value="6_to_10_pm">
-        <label for="6_to_10_pm">18:00 - 22:00</label>
-        <input type="radio" id="4_to_8_pm" name="study_hours" value="4_to_8_pm">
+        <label for="6_to_10_pm">18:00 - 22:00</label><br>
+        <input type="radio" id="4_to_8_pm" name="study_hours" value="4_to_8_pm" style="margin-right: 107px;">
         <label for="4_to_8_pm">16:00 - 20:00</label>
 
 
@@ -118,9 +120,12 @@
 
       </fieldset>
 
-      <button ttype="submit">שליחה</button>
+      <button style=" margin: 10px auto 0; font-size: 17px; padding: 5px 90px; background-color: #114b4c
+; border: 0; color: #fff; border-radius: 13px; cursor: pointer;" type="submit">שליחה</button>
     </form>
 
     <div id="result"></div>
-  </body>
+  
+    </div>
+    </body>
 </html>
