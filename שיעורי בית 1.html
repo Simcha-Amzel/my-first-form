@@ -30,42 +30,42 @@
     <div style="max-width: 800px; margin: auto; padding: 0px 16px;">
     <h1 style="text-align: center;">שמחה חמניצקי לימודי תכנות מהירים</h1>
     <h2 style="text-align: center;">טופס הרשמה ובחירת קורס</h2>
-    <h3 style="margin-right: 16px;font-size:25px ;">מלאו את הפרטים ונחזור אליכם בהקדם!</h3>
+    <h3 style="text-align: center; font-size: 25px;">מלאו את הפרטים ונחזור אליכם בהקדם!</h3>
     <form onsubmit="handleSubmit(event)">
       <fieldset style="background-color: rgba(255, 255, 255, 0.75); border-radius: 13px;">
         <legend style="font-size: 20px;">פרטים אישיים</legend>
 
-        <label for="fname" style="width: 115px;display: inline-block; margin: 5px 20px 5px 0px; font-size: 32px;">שם פרטי:</label>
-        <input type="text" id="fname" name="fname" style="border-radius: 7px; width: 580px;" /><br />
+        <label for="fname" style="width: 140px;display: inline-block; margin: 20px 20px 20px 0px; font-size: 20px;">שם פרטי:</label>
+        <input type="text" id="fname" name="fname" style="border-radius: 13px;width: 560px; padding: 10px; font-size: 17px;" /><br />
 
-        <label for="lname" style="width: 100px;display: inline-block; margin: 5px 20px 5px 0px;">שם משפחה:</label>
-        <input type="text" id="lname" name="lname" style="border-radius: 7px;" /><br />
+        <label for="lname" style="width: 140px;display: inline-block; margin: 20px 20px 20px 0px; font-size: 20px;">שם משפחה:</label>
+        <input type="text" id="lname" name="lname" style="border-radius: 13px;width: 560px; padding: 10px; font-size: 17px;" /><br />
 
-        <label for="id_namber" style="width: 100px;display: inline-block; margin: 5px 20px 5px 0px;">ת.ז.</label>
-        <input type="text" id="id_namber" name="id_namber" style="border-radius: 7px;" /><br />
+        <label for="id_namber" style="width: 140px;display: inline-block; margin: 20px 20px 20px 0px; font-size: 20px;">ת.ז.</label>
+        <input type="text" id="id_namber" name="id_namber" style="border-radius: 13px;width: 560px; padding: 10px; font-size: 17px;" /><br />
 
-        <label for="First_last_name" style="width: 100px;display: inline-block; margin: 5px 20px 5px 0px;">שם משפחה קודם:</label>
-        <input type="text" id="First_last_name" name="prev_last_name" style="border-radius: 7px;" /><br />
+        <label for="First_last_name" style="width: 140px;display: inline-block; margin: 20px 20px 20px 0px; font-size: 20px;">שם משפחה קודם:</label>
+        <input type="text" id="First_last_name" name="prev_last_name" style="border-radius: 13px;width: 560px; padding: 10px; font-size: 17px;" /><br />
 
-        <span style="width: 100px;display: inline-block; margin: 5px 20px 5px 0px;">מין</span>
+        <span style="width: 140px;display: inline-block; margin: 20px 20px 20px 0px; font-size: 20px;">מגדר</span>
         <input type="radio" id="male" name="gender" value="male"  />
-        <label for="male">זכר</label>
-        <input type="radio" id="female" name="gender" value="female" />
-        <label for="female">נקבה</label><br />
+        <label for="male" style="font-size: 25px;">זכר</label>
+        <input type="radio" id="female" name="gender" value="female" style="margin-right: 20px;" />
+        <label for="female" style="font-size: 25px;">נקבה</label><br />
 
-        <label for="family_status" style="width: 100px;display: inline-block; margin: 5px 20px 5px 0px;">מצב משפחתי</label>
-        <select name="family_status" id="family_status" style="width: 177px; border-radius: 7px;">
+        <label for="family_status" style="width: 140px;display: inline-block; margin: 20px 20px 20px 0px; font-size: 20px;">מצב משפחתי</label>
+        <select name="family_status" id="family_status" style="width: 177px; border-radius: 13px;width: 584px; padding: 10px; font-size: 17px;">
           <option value="">בחר...</option>
           <option value="single">רווק</option>
           <option value="married">נשוי</option>
           <option value="widower">אלמן</option>
           <option value="divorcee">גרוש</option>
         </select><br>
-        <label for="namber_of_chldren" style="width: 100px;display: inline-block; margin: 5px 20px 5px 0px;">מס' ילדים</label>
-        <input type="naber" id="namber_of_chldren" name="namber_of_chldren" style="border-radius: 7px;" /><br>
+        <label for="namber_of_chldren" style="width: 140px;display: inline-block; margin: 20px 20px 20px 0px; font-size: 20px;">מס' ילדים</label>
+        <input type="naber" id="namber_of_chldren" name="namber_of_chldren" style="border-radius: 13px;width: 560px; padding: 10px; font-size: 17px;" /><br>
 
-        <label for="citizenship" style="width: 100px;display: inline-block; margin: 5px 20px 5px 0px;">אזרחות:</label>
-        <select name="citizenship" id="citizenship" style="width: 177px; border-radius: 7px;">
+        <label for="citizenship" style="width: 140px;display: inline-block; margin: 20px 20px 20px 0px; font-size: 20px;">אזרחות:</label>
+        <select name="citizenship" id="citizenship" style="width: 177px; border-radius: 13px;width: 584px; padding: 10px; font-size: 17px;">
             <option value="">בחר...</option>
             <option value="israel">ישראל</option>
             <option value="u.s">ארה"ב</option>
@@ -75,22 +75,22 @@
             <option value="cyprus">קפריסין</option>
         </select><br>
 
-        <label for="date_of_birth" style="width: 100px;display: inline-block; margin: 5px 20px 5px 0px;">ת. לידה:</label>
-        <input type="date" id="date_of_birth" name="date_of_birth" style="width: 172px; border-radius: 7px;"><br>
+        <label for="date_of_birth" style="width: 140px;display: inline-block; margin: 20px 20px 20px 0px; font-size: 20px;">ת. לידה:</label>
+        <input type="date" id="date_of_birth" name="date_of_birth" style="width: 172px; border-radius: 13px;width: 560px; padding: 10px; font-size: 17px;"><br>
 
-        <label for="address" style="width: 100px;display: inline-block; margin: 5px 20px 5px 0px;">כתובת:</label>
-        <input type="text" id="address" name="address"  style="border-radius: 7px;" /><br>
+        <label for="address" style="width: 140px;display: inline-block; margin: 20px 20px 20px 0px; font-size: 20px;">כתובת:</label>
+        <input type="text" id="address" name="address"  style="border-radius: 13px;width: 560px; padding: 10px; font-size: 17px;" /><br>
 
-        <label for="telephone_number" style="width: 100px;display: inline-block; margin: 5px 20px 5px 0px;">מס' טלפון:</label>
-        <input type="text" id="telephone_number" name="telephone_number" style="border-radius: 7px;" /><br>
+        <label for="telephone_number" style="width: 140px;display: inline-block; margin: 20px 20px 20px 0px; font-size: 20px;">מס' טלפון:</label>
+        <input type="text" id="telephone_number" name="telephone_number" style="border-radius: 13px;width: 560px; padding: 10px; font-size: 17px;" /><br>
         
       </fieldset>
 
       <fieldset style="background-color: rgba(255, 255, 255, 0.75); margin-top: 16px; border-radius: 13px;">
-        <legend style="font-size: 20px;">פרטי הקורס המבוקש</legend>
+        <legend style="font-size: 20px;">פרטי הקורס </legend>
 
-        <label for="course_name" style="width: 100px;display: inline-block; margin: 5px 20px 5px 0px;">שם הקורס</label>
-        <select name="course_name" id="course_name" style="width: 177px; border-radius: 7px;">
+        <label for="course_name" style="width: 140px;display: inline-block; margin: 20px 20px 20px 0px; font-size: 20px;">שם הקורס:</label>
+        <select name="course_name" id="course_name" style="width: 177px; border-radius: 13px;width: 584px; padding: 10px; font-size: 17px;;">
         <option value="">בחר...</option>
         <option value="english">אנגלית</option>
         <option value="construction_supervision">פיקוח בנייה</option>
@@ -99,19 +99,19 @@
         <option value="progremmer">תכנות</option>
         </select><br>
 
-        <label for="study_location" style="width: 100px;display: inline-block; margin: 5px 20px 5px 0px;">מקום הלימוד:</label>
-        <select name="study_location" id="study_location" style="width: 177px; border-radius: 7px;">
+        <label for="study_location" style="width: 140px;display: inline-block; margin: 20px 20px 20px 0px; font-size: 20px">מקום הלימוד:</label>
+        <select name="study_location" id="study_location" style="width: 177px; border-radius: 13px;width: 584px; padding: 10px; font-size: 17px;">
             <option value="">בחר...</option>
             <option value="ashdod">אשדוד</option>
             <option value="beit_shemesh">בית שמש</option>
             <option value="jerusalem">ירושלים</option>
         </select><br>
 
-        <span style="width: 100px;display: inline-block; margin: 5px 20px 5px 0px;">שעות לימוד</span>
-        <input type="radio" id="6_to_10_pm" name="study_hours" value="6_to_10_pm">
-        <label for="6_to_10_pm">18:00 - 22:00</label><br>
-        <input type="radio" id="4_to_8_pm" name="study_hours" value="4_to_8_pm" style="margin-right: 127px;">
-        <label for="4_to_8_pm">16:00 - 20:00</label>
+        <span style="width: 140px;display: inline-block; margin: 20px 20px 20px 0px; font-size: 20px;">שעות הלימוד:</span>
+        <input type="radio" id="6_to_10_pm" name="study_hours" value="6_to_10_pm" />
+        <label for="6_to_10_pm" style="font-size: 20px;">18:00 - 22:00</label>
+        <input type="radio" id="4_to_8_pm" name="study_hours" value="4_to_8_pm" style="margin-right: 20px;" />
+        <label for="4_to_8_pm" style="font-size: 20px;">16:00 - 20:00</label>
 
 
         </select>
@@ -120,8 +120,8 @@
 
       </fieldset>
 
-      <button style=" margin: 10px auto 0; font-size: 17px; padding: 5px 90px; background-color: #114b4c
-; border: 0; color: #fff; border-radius: 13px; cursor: pointer;" type="submit">שליחה</button>
+      <button style=" margin:25px auto; display: block; padding: 20px 90px; background-color: #114b4c
+                    ; border: 0; color: #fff; border-radius: 13px;width: 560px; padding: 10px; font-size: 17px; cursor: pointer;" type="submit">שליחה</button>
     </form>
 
     <div id="result"></div>
