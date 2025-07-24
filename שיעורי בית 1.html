@@ -1,10 +1,297 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="he" dir="rtl">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>שיעורי בית</title>
+    <title>הרשמה לקורס חיות</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --primary-color: #4a69bd;
+        --secondary-color: #6ab04c;
+        --background-color: #f7f9fb;
+        --form-bg-color: #ffffff;
+        --text-color: #333333;
+        --border-color: #dddddd;
+        --shadow-color: rgba(0, 0, 0, 0.1);
+        --font-family: 'Assistant', sans-serif;
+      }
 
+      body {
+        background-color: var(--background-color);
+        background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/leaves-pattern.png');
+        margin: 0;
+        font-family: var(--font-family);
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        box-shadow: 0 8px 24px var(--shadow-color);
+      }
+
+      h1, h2, h3 {
+        text-align: center;
+        font-weight: 700;
+        color: var(--primary-color);
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      h2 {
+        font-size: 1.75rem;
+        font-weight: 400;
+        margin-top: 0;
+        margin-bottom: 2rem;
+      }
+      
+      h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+        text-align: right;
+        margin-bottom: 1.5rem;
+        border-bottom: 2px solid var(--secondary-color);
+        padding-bottom: 0.5rem;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+
+      fieldset {
+        background-color: var(--form-bg-color);
+        border: 1px solid var(--border-color);
+        border-radius: 15px;
+        padding: 1.5rem 2rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 4px 12px var(--shadow-color);
+      }
+
+      legend {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary-color);
+        padding: 0 1rem;
+        margin-right: 1rem;
+      }
+
+      .form-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      label, .label-span {
+        width: 120px;
+        font-weight: 600;
+        margin-left: 1rem;
+        flex-shrink: 0;
+      }
+
+      input[type="text"],
+      input[type="date"],
+      input[type="naber"],
+      select {
+        flex-grow: 1;
+        padding: 0.75rem;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        font-size: 1rem;
+        font-family: var(--font-family);
+        transition: all 0.3s ease;
+      }
+
+      input:focus, select:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(74, 105, 189, 0.2);
+      }
+
+      .radio-group label, .radio-group input {
+        margin-left: 0.5rem;
+        cursor: pointer;
+      }
+      .radio-group label:not(:last-of-type) {
+        margin-left: 1.5rem;
+      }
+
+      button[type="submit"] {
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding: 0.8rem 2rem;
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        border: none;
+        color: white;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin: 1rem auto 0;
+        display: block;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      button[type="submit"]:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      #result {
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background-color: var(--form-bg-color);
+        border-radius: 15px;
+        box-shadow: 0 4px 12px var(--shadow-color);
+      }
+
+      #result table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      #result th, #result td {
+        padding: 0.8rem;
+        text-align: right;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      #result thead th {
+        background-color: var(--primary-color);
+        color: white;
+        font-weight: 600;
+      }
+      
+      #result tbody tr:nth-child(even) {
+        background-color: #f8f9fa;
+      }
+
+      #result tbody tr:hover {
+        background-color: #e9ecef;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>הרשמה לגן חיות 🐘</h1>
+      <h2>טופס הרשמה ובחירת חיה</h2>
+      <h3>מלאו את הפרטים ונחזור אליכם בהקדם!</h3>
+      
+      <form onsubmit="handleSubmit(event)">
+        <fieldset>
+          <legend>פרטים אישיים 🦒</legend>
+          <div class="form-row">
+            <label for="fname">שם פרטי:</label>
+            <input type="text" id="fname" name="fname" required />
+          </div>
+          <div class="form-row">
+            <label for="lname">שם משפחה:</label>
+            <input type="text" id="lname" name="lname" required />
+          </div>
+          <div class="form-row">
+            <label for="id_namber">ת.ז.</label>
+            <input type="text" id="id_namber" name="id_namber" required />
+          </div>
+          <div class="form-row">
+            <label for="First_last_name">שם משפחה קודם:</label>
+            <input type="text" id="First_last_name" name="prev_last_name" />
+          </div>
+          <div class="form-row radio-group">
+            <span class="label-span">מין</span>
+            <input type="radio" id="male" name="gender" value="male" />
+            <label for="male">זכר</label>
+            <input type="radio" id="female" name="gender" value="female" />
+            <label for="female">נקבה</label>
+          </div>
+          <div class="form-row">
+            <label for="family_status">מצב משפחתי</label>
+            <select name="family_status" id="family_status">
+              <option value="">בחר...</option>
+              <option value="single">רווק</option>
+              <option value="married">נשוי</option>
+              <option value="widower">אלמן</option>
+              <option value="divorcee">גרוש</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="namber_of_chldren">מס' ילדים</label>
+            <input type="naber" id="namber_of_chldren" name="namber_of_chldren">
+          </div>
+          <div class="form-row">
+            <label for="citizenship">אזרחות:</label>
+            <select name="citizenship" id="citizenship">
+                <option value="">בחר...</option>
+                <option value="israel">ישראל</option>
+                <option value="u.s">ארה"ב</option>
+                <option value="england">אנגליה</option>
+                <option value="spain">ספרד</option>
+                <option value="portugal">פורטוגל</option>
+                <option value="cyprus">קפריסין</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="date_of_birth">ת. לידה:</label>
+            <input type="date" id="date_of_birth" name="date_of_birth">
+          </div>
+          <div class="form-row">
+            <label for="address">כתובת:</label>
+            <input type="text" id="address" name="address">
+          </div>
+          <div class="form-row">
+            <label for="telephone_number">מס' טלפון:</label>
+            <input type="text" id="telephone_number" name="telephone_number">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>בחירת חיה 🐅</legend>
+          <div class="form-row">
+            <label for="animal_name">בחר חיה</label>
+            <select name="animal_name" id="animal_name">
+              <option value="">בחר...</option>
+              <option value="lion">אריה</option>
+              <option value="tiger">טיגריס</option>
+              <option value="bear">דוב</option>
+              <option value="monkey">קוף</option>
+              <option value="zebra">זברה</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="habitat">בחר אזור מחייה:</label>
+            <select name="habitat" id="habitat">
+                <option value="">בחר...</option>
+                <option value="savanna">סוואנה</option>
+                <option value="jungle">ג'ונגל</option>
+                <option value="arctic">הקוטב הצפוני</option>
+            </select>
+          </div>
+          <div class="form-row radio-group">
+            <span class="label-span">שעות האכלה</span>
+            <input type="radio" id="morning" name="feeding_hours" value="morning">
+            <label for="morning">בוקר (08:00-10:00)</label>
+            <input type="radio" id="evening" name="feeding_hours" value="evening">
+            <label for="evening">ערב (18:00-20:00)</label>
+          </div>
+        </fieldset>
+
+        <button type="submit">שליחה</button>
+      </form>
+
+      <div id="result"></div>
+    </div>
+    
     <script>
       function handleSubmit(event) {
         event.preventDefault();
@@ -12,120 +299,36 @@
         var formData = new FormData(event.target);
         const data = Object.fromEntries(formData);
 
-        let html = `<table><thead><tr><th style="text-align:right">מפתח</th><th>ערך</th></thead><tbody>`;
+        let html = `<table><thead><tr><th>שדה</th><th>ערך</th></tr></thead><tbody>`;
         
-        for(i in data) {
-            html += `<tr><th style="text-align:right">${i}</th><td>${data[i]}</td></tr>`;
+        const fieldNames = {
+          fname: 'שם פרטי',
+          lname: 'שם משפחה',
+          id_namber: 'ת.ז.',
+          prev_last_name: 'שם משפחה קודם',
+          gender: 'מין',
+          family_status: 'מצב משפחתי',
+          namber_of_chldren: 'מספר ילדים',
+          citizenship: 'אזרחות',
+          date_of_birth: 'תאריך לידה',
+          address: 'כתובת',
+          telephone_number: 'טלפון',
+          animal_name: 'חיה שנבחרה',
+          habitat: 'אזור מחייה',
+          feeding_hours: 'שעות האכלה'
+        };
+
+        for(const key in data) {
+            if (data[key]) {
+              const fieldName = fieldNames[key] || key;
+              html += `<tr><th>${fieldName}</th><td>${data[key]}</td></tr>`;
+            }
         };
 
         html += '</tbody></table>';
 
         document.querySelector('#result').innerHTML = html;
-
       }
     </script>
-  </head>
-
-  <body style="background-color: #00eaff; margin: 0;">
-    <div style="max-width: 800px; margin: auto; padding: 0px 16px;">
-    <h1 style="text-align: center;">שמחה חמניצקי לימודי תכנות מהירים</h1>
-    <h2 style="text-align: center;">טופס הרשמה ובחירת קורס</h2>
-    <h3 style="margin-right: 16px;font-size:25px ;">מלאו את הפרטים ונחזור אליכם בהקדם!</h3>
-    <form onsubmit="handleSubmit(event)">
-      <fieldset style="background-color: rgba(255, 255, 255, 0.75);">
-        <legend style="font-size: 20px;">פרטים אישיים</legend>
-
-        <label for="fname" style="width: 100px;display: inline-block;">שם פרטי:</label>
-        <input type="text" id="fname" name="fname" /><br />
-
-        <label for="lname" style="width: 100px;display: inline-block;">שם משפחה:</label>
-        <input type="text" id="lname" name="lname" /><br />
-
-        <label for="id_namber" style="width: 100px;display: inline-block;">ת.ז.</label>
-        <input type="text" id="id_namber" name="id_namber" /><br />
-
-        <label for="First_last_name" style="width: 100px;display: inline-block;">שם משפחה קודם:</label>
-        <input type="text" id="First_last_name" name="prev_last_name" /><br />
-
-        <span style="width: 100px;display: inline-block;">מין</span>
-        <input type="radio" id="male" name="gender" value="male"  />
-        <label for="male">זכר</label>
-        <input type="radio" id="female" name="gender" value="female" />
-        <label for="female">נקבה</label><br />
-
-        <label for="family_status" style="width: 100px;display: inline-block;">מצב משפחתי</label>
-        <select name="family_status" id="family_status" style="width: 177px;">
-          <option value="">בחר...</option>
-          <option value="single">רווק</option>
-          <option value="married">נשוי</option>
-          <option value="widower">אלמן</option>
-          <option value="divorcee">גרוש</option>
-        </select><br>
-        <label for="namber_of_chldren" style="width: 100px;display: inline-block;">מס' ילדים</label>
-        <input type="naber" id="namber_of_chldren" name="namber_of_chldren"><br>
-
-        <label for="citizenship" style="width: 100px;display: inline-block;">אזרחות:</label>
-        <select name="citizenship" id="citizenship" style="width: 177px;">
-            <option value="">בחר...</option>
-            <option value="israel">ישראל</option>
-            <option value="u.s">ארה"ב</option>
-            <option value="england">אנגליה</option>
-            <option value="spain">ספרד</option>
-            <option value="portugal">פורטוגל</option>
-            <option value="cyprus">קפריסין</option>
-        </select><br>
-
-        <label for="date_of_birth" style="width: 100px;display: inline-block;">ת. לידה:</label>
-        <input type="date" id="date_of_birth" name="date_of_birth" style="width: 172px;"><br>
-
-        <label for="address" style="width: 100px;display: inline-block;">כתובת:</label>
-        <input type="text" id="address" name="address"><br>
-
-        <label for="telephone_number" style="width: 100px;display: inline-block;">מס' טלפון:</label>
-        <input type="text" id="telephone_number" name="telephone_number"><br>
-        
-      </fieldset>
-
-      <fieldset style="background-color: rgba(255, 255, 255, 0.75); margin-top: 16px;">
-        <legend style="font-size: 20px;">פרטי הקורס המבוקש</legend>
-
-        <label for="course_name" style="width: 100px;display: inline-block;">שם הקורס</label>
-        <select name="course_name" id="course_name" style="width: 177px;">
-        <option value="">בחר...</option>
-        <option value="english">אנגלית</option>
-        <option value="construction_supervision">פיקוח בנייה</option>
-        <option value="electrician">חשמלאי</option>
-        <option value="lnterior_designer">מעצב פנים</option>
-        <option value="progremmer">תכנות</option>
-        </select><br>
-
-        <label for="study_location" style="width: 100px;display: inline-block;">מקום הלימוד:</label>
-        <select name="study_location" id="study_location" style="width: 177px;">
-            <option value="">בחר...</option>
-            <option value="ashdod">אשדוד</option>
-            <option value="beit_shemesh">בית שמש</option>
-            <option value="jerusalem">ירושלים</option>
-        </select><br>
-
-        <span style="width: 100px;display: inline-block;">שעות לימוד</span>
-        <input type="radio" id="6_to_10_pm" name="study_hours" value="6_to_10_pm">
-        <label for="6_to_10_pm">18:00 - 22:00</label><br>
-        <input type="radio" id="4_to_8_pm" name="study_hours" value="4_to_8_pm" style="margin-right: 107px;">
-        <label for="4_to_8_pm">16:00 - 20:00</label>
-
-
-        </select>
-        
-
-
-      </fieldset>
-
-      <button style=" margin: 10px auto 0; font-size: 17px; padding: 5px 90px; background-color: #114b4c
-; border: 0; color: #fff; border-radius: 13px; cursor: pointer;" type="submit">שליחה</button>
-    </form>
-
-    <div id="result"></div>
-  
-    </div>
-    </body>
+  </body>
 </html>
